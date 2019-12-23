@@ -10,7 +10,11 @@ Dockered Salt Minion for asustor
 # Execution
 
 ```
-docker run -d --name=salt \
-   --privileged --pid=host
-   -v ~/salt:/etc/salt visago/saltminion 
+docker pull visago/salt-minion
+docker stop salt-minion
+docker rm salt-minion
+docker run --restart=always --name=salt-minion -d \
+  --pid=host --privileged --network=host \
+  -v $(pwd):/etc/salt \
+  visago/salt-minion
 ```

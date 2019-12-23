@@ -3,11 +3,14 @@ RUN apt-get update && \
     apt-get install -y \
         jq \
         wget \
+        mtr \
+        fping \
+        nmap \
         curl \
         git \
-        vim \
         cmake \
         unzip \
+        iproute2 \
         apt-transport-https \
         ca-certificates \
         software-properties-common \
