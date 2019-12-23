@@ -19,4 +19,4 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 RUN curl -L https://bootstrap.saltstack.com -o install_salt.sh && sh install_salt.sh -P
-CMD ["/usr/local/bin/salt-minion", "-l", "info"]
+CMD ["/usr/bin/salt-minion", "-l", "info"]
